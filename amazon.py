@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import sklearn
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -33,7 +34,7 @@ def train_model(df):
 def predict_sentiment(model, vectorizer, review):
     review_tfidf = vectorizer.transform([review])
     prediction = model.predict(review_tfidf)[0]
-    return 'Positive' if prediction == 1 and 0 else 'Negative'
+    return 'Positive' if prediction == 0 and 1 else 'Negative'
 
 # Load Data and Train Model
 df = load_data()
