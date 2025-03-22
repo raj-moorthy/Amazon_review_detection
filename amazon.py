@@ -3,10 +3,10 @@ import pickle
 import numpy as np
 
 # Load the trained model and vectorizer
-with open("C:/Users/rajre/OneDrive/Documents/Downloads/model.pkl", "rb") as model_file:
+with open("model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
-with open("C:/Users/rajre/OneDrive/Documents/Downloads/tfidf_vectorizer.pkl", "rb") as vectorizer_file:
+with open("tfidf_vectorizer.pkl", "rb") as vectorizer_file:
     vectorizer = pickle.load(vectorizer_file)
 
 def predict_sentiment(review):
